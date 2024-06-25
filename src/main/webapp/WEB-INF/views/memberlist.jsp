@@ -13,14 +13,16 @@
 	<table border="1" cellspacing="0" cellpadding="0">
 	<caption></caption>
 		<tr>
+			<th>번호</th>
 			<th>아이디</th>
 			<th>이름</th>
 			<th>이메일</th>
 			<th>가입일</th>		
 		</tr>
 		
-		<c:forEach items="${memberList }" var="member">
+		<c:forEach items="${memberList }" var="member" varStatus="number">
 		<tr>
+			<td>${number.count  }</td>
 			<td>${member.mid }</td>
 			<td>${member.mname }</td>
 			<td>${member.memail }</td>
