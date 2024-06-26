@@ -16,4 +16,6 @@ public interface MemberDao {
 	
 	public int countDao(); // 총 회원수 조회 메소드
 	
+	public int deleteMemberDao(String mid); // 회원 탈퇴(회원 삭제) 메소드
+	
 }
