@@ -12,5 +12,5 @@ public interface BoardDao {
 	public BoardDto content_viewDao(String bnum); // 글 번호로 내용 조회
 	public void modifyDao(String btitle, String bcontent,String bnum); // 글 수정
 	public void uphitDao(String bnum); // 조회수 증가
-	
+	public void deleteDao(String bnum); // 글 삭제
 }

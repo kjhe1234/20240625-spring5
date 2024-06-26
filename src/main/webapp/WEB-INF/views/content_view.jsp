@@ -46,7 +46,7 @@
 					if(idCheck.equals("1")){
 			%>
 				<input type="button" value="수정" onclick="javascript:window.location.href='modify?bnum=${boarddto.bnum}'">				
-				<input type="button" value="삭제">
+				<input type="button" value="삭제" onclick="javascript:window.location.href='delete?bnum=${boarddto.bnum}'">
 			<%
 						}
 			%>

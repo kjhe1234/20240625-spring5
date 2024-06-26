@@ -26,6 +26,9 @@
 		UPDATE springboard SET bhit=bhit+1 WHERE bnum=#{param1}
 	</update>
 
+	<delete id="deleteDao">
+		DELETE FROM springboard WHERE bnum=#{param1}
+	</delete>
 
 
 

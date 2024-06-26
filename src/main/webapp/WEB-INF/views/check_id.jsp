@@ -9,6 +9,7 @@
 <body>
 	<%
 		String idFlag = request.getAttribute("idFlag").toString();
+		// 컨트롤러에서 model에 넣어서 보내준 값을 jsp 파일에서 가져오는 방법
 		if(idFlag.equals("1")) { //  가입 불가 아이디
 	%>
 		<script type="text/javascript">
