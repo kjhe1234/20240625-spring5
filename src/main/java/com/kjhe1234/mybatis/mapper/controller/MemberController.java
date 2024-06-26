@@ -118,7 +118,6 @@ public class MemberController {
 		
 		if(success ==1) {  // 참이면 성공
 			return "redirect:memberlist";
-			
 		} else {  //실패
 			model.addAttribute("deleteFail", "존재하지 않는 회원 입니다. 다시 확인하세요.");
 			return "delete";

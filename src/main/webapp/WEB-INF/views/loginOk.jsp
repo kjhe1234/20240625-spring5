@@ -10,7 +10,7 @@
 	<h2>로그인 성공</h2>
 	<hr>
 	<h3>${loginid }님 환영 합니다.</h3>
-
+	<a href="write">글쓰기</a>
 
 
 </body>
