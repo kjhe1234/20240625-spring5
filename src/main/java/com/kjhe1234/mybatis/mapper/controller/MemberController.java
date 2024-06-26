@@ -136,7 +136,16 @@ public class MemberController {
 		return "redirect:login";
 	}
 	
-	
+	@RequestMapping(value = "/checkid")
+	public String checkid(HttpServletRequest request, Model model) {
+		
+		MemberDao memberdao = sqlSession.getMapper(MemberDao.class);
+		int idFlag = memberdao.checkIdDao(request.getParameter("checkId"));
+		
+		model.addAttribute("idFlag", idFlag);
+		
+		return "check_id";
+	}
 	
 	
 	

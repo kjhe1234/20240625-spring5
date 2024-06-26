@@ -68,11 +68,21 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/contentView")
-	public String contentView(HttpServletRequest request, Model model) {
+	public String contentView(HttpServletRequest request, Model model,HttpSession session) {
 		
 		BoardDao boarddao = sqlSession.getMapper(BoardDao.class);
 		BoardDto boarddto = boarddao.content_viewDao(request.getParameter("bnum"));
 		
+		String sessionid = (String) session.getAttribute("sessionid"); // 세션 아이디 가져오기
+
+		int idCheck = 0;  //flag 값
+		
+		if((sessionid != null)  && (boarddto.getBid().equals(sessionid))) {  //현재 로그인한 아이디와 글쓴 아이디가 동일
+			idCheck = 1;
+		}
+		
+		model.addAttribute("idCheck", idCheck);
+		// 현재 로그인한 아이디와 글쓴이 아이디가 동일하면 idChecㅏ=1이 됨 아니면 0		
 		model.addAttribute("boarddto", boarddto);
 		
 		return "content_view";
@@ -83,7 +93,7 @@ public class BoardController {
 		
 		BoardDao boarddao = sqlSession.getMapper(BoardDao.class);
 		BoardDto boarddto = boarddao.content_viewDao(request.getParameter("bnum"));
-		
+				
 		model.addAttribute("boarddto", boarddto);
 		
 		return "modify_form";

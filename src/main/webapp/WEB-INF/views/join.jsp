@@ -10,6 +10,15 @@
 	<h2>회원 가입</h2>
 	<hr>
 	<table border="1" sellspacing="" cellpadding="0" size="600">
+		<tr>
+			<td colspan="2">
+				<form action="checkid">
+						아이디 중복 확인 : <input type="text" name="checkId" size="60">
+						<input type="submit" value="중복확인">
+				</form>
+			</td>	
+		</tr>
+	
 	<form action="joinOk">
 		<tr>
 			<td>아이디</td>
