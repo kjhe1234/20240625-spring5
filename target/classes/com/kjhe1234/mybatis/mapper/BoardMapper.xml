@@ -13,5 +13,14 @@
 	<select id="boardListDao" resultType="com.kjhe1234.mybatis.mapper.dto.BoardDto">
 		SELECT * FROM springboard ORDER BY bnum DESC
 	</select>
+	
+	<select id="content_viewDao" resultType="com.kjhe1234.mybatis.mapper.dto.BoardDto">
+		SELECT * FROM springboard WHERE bnum=#{param1}
+	</select>
+	
+	<update id="modifyDao">
+		UPDATE springboard SET btitle=#{param1}, bcontent=#{param2} WHERE bnum=#{param3}
+		
+	</update>
 
 </mapper>
